@@ -2,46 +2,12 @@ From HB Require Import structures.
 From mathcomp
 Require Import ssreflect ssrfun ssrbool eqtype ssrnat seq choice fintype tuple.
 From mathcomp
-Require Import bigop finset finfun perm fingraph path div.
+Require Import bigop finset finfun perm fingraph path div order.
 
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.
 
-Reserved Notation "\min_ i F"
-  (at level 41, F at level 41, i at level 0,
-           format "'[' \min_ i '/  '  F ']'").
-Reserved Notation "\min_ ( i <- r | P ) F"
-  (at level 41, F at level 41, i, r at level 50,
-           format "'[' \min_ ( i  <-  r  |  P ) '/  '  F ']'").
-Reserved Notation "\min_ ( i <- r ) F"
-  (at level 41, F at level 41, i, r at level 50,
-           format "'[' \min_ ( i  <-  r ) '/  '  F ']'").
-Reserved Notation "\min_ ( m <= i < n | P ) F"
-  (at level 41, F at level 41, i, m, n at level 50,
-           format "'[' \min_ ( m  <=  i  <  n  |  P ) '/  '  F ']'").
-Reserved Notation "\min_ ( m <= i < n ) F"
-  (at level 41, F at level 41, i, m, n at level 50,
-           format "'[' \min_ ( m  <=  i  <  n ) '/  '  F ']'").
-Reserved Notation "\min_ ( i | P ) F"
-  (at level 41, F at level 41, i at level 50,
-           format "'[' \min_ ( i  |  P ) '/  '  F ']'").
-Reserved Notation "\min_ ( i : t | P ) F"
-  (at level 41, F at level 41, i at level 50).
-Reserved Notation "\min_ ( i : t ) F"
-  (at level 41, F at level 41, i at level 50).
-Reserved Notation "\min_ ( i < n | P ) F"
-  (at level 41, F at level 41, i, n at level 50,
-           format "'[' \min_ ( i  <  n  |  P ) '/  '  F ']'").
-Reserved Notation "\min_ ( i < n ) F"
-  (at level 41, F at level 41, i, n at level 50,
-           format "'[' \min_ ( i  <  n )  F ']'").
-Reserved Notation "\min_ ( i 'in' A | P ) F"
-  (at level 41, F at level 41, i, A at level 50,
-           format "'[' \min_ ( i  'in'  A  |  P ) '/  '  F ']'").
-Reserved Notation "\min_ ( i 'in' A ) F"
-  (at level 41, F at level 41, i, A at level 50,
-           format "'[' \min_ ( i  'in'  A ) '/  '  F ']'").
 Lemma ord_minn_le n (i j : 'I_n) : minn i j < n.
 Proof. by rewrite gtn_min ltn_ord. Qed.
 Definition ord_minn {n} (i j : 'I_n) := Ordinal (ord_minn_le i j).

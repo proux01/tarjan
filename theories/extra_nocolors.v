@@ -32,19 +32,13 @@ HB.instance Definition _ := Monoid.isComLaw.Build 'I_n.+1 T min
 End ord_min.
 
 Notation "\min_ ( i | P ) F" := (\big[ord_minn/ord_max]_(i | P%B) F%N)
-  (at level 41, F at level 41, i at level 50,
-   format "'[' \min_ ( i  |  P ) '/  '  F ']'") : nat_scope.
+  : nat_scope.
 Notation "\min_ i F" := (\big[ord_minn/ord_max]_i F%N) 
-  (at level 41, F at level 41, i at level 0,
-   format "'[' \min_ i '/  '  F ']'") : nat_scope.
+  : nat_scope.
 Notation "\min_ ( i 'in' A | P ) F" :=
- (\big[ord_minn/ord_max]_(i in A | P%B) F%N)
-  (at level 41, F at level 41, i, A at level 50,
-   format "'[' \min_ ( i  'in'  A  |  P ) '/  '  F ']'") : nat_scope.
+ (\big[ord_minn/ord_max]_(i in A | P%B) F%N) : nat_scope.
 Notation "\min_ ( i 'in' A ) F" :=
- (\big[ord_minn/ord_max]_(i in A) F%N)
-  (at level 41, F at level 41, i, A at level 50,
-   format "'[' \min_ ( i  'in'  A ) '/  '  F ']'") : nat_scope.
+ (\big[ord_minn/ord_max]_(i in A) F%N) : nat_scope.
 
 Section extra_bigmin.
 
